@@ -1,0 +1,100 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0" version="24.7.17">
+  <diagram name="Страница — 1" id="vIH0hPLlG6JQeUh0Hnpc">
+    <mxGraphModel dx="1143" dy="484" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="QsQkhcBlZQ82mHcUwRK9-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;endArrow=none;endFill=0;endSize=10;targetPerimeterSpacing=0;jumpSize=148;strokeWidth=2;" parent="1" source="QsQkhcBlZQ82mHcUwRK9-9" target="QsQkhcBlZQ82mHcUwRK9-12" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="QsQkhcBlZQ82mHcUwRK9-10" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeWidth=2;endSize=10;endArrow=none;endFill=0;" parent="1" source="QsQkhcBlZQ82mHcUwRK9-12" target="QsQkhcBlZQ82mHcUwRK9-18" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="QsQkhcBlZQ82mHcUwRK9-12" value="&lt;div style=&quot;text-align: right;&quot;&gt;&lt;span style=&quot;white-space-collapse: preserve;&quot;&gt;LibraryStaff&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;white-space-collapse: preserve;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;" style="html=1;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="525" y="780" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="QsQkhcBlZQ82mHcUwRK9-13" value="1:&amp;nbsp; requestInformation()&amp;nbsp;&lt;div&gt;(request: string, reader: Reader)&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="210" y="770" width="190" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="QsQkhcBlZQ82mHcUwRK9-32" value="&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial; white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;sd Patient.MakeAppointment(&lt;/span&gt;&lt;span style=&quot;background-color: initial; white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;BookName&lt;span style=&quot;background-color: initial;&quot;&gt;: String,&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;reader: Reader&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;)&lt;/span&gt;&lt;/div&gt;" style="shape=umlFrame;whiteSpace=wrap;html=1;pointerEvents=0;recursiveResize=0;container=1;collapsible=0;width=310;height=55;" parent="1" vertex="1">
+          <mxGeometry x="110" y="665" width="800" height="495" as="geometry" />
+        </mxCell>
+        <mxCell id="QsQkhcBlZQ82mHcUwRK9-16" value="1.3.1: getCopies()&lt;br&gt;(book: Book)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="QsQkhcBlZQ82mHcUwRK9-32" vertex="1">
+          <mxGeometry x="450" y="345" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="QsQkhcBlZQ82mHcUwRK9-19" value="1.4: available = checkAvailability()&lt;br&gt;(copy: BookCopy)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;rotation=-45;" parent="QsQkhcBlZQ82mHcUwRK9-32" vertex="1">
+          <mxGeometry x="280" y="235" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="QsQkhcBlZQ82mHcUwRK9-25" value="1.1 book = determineBooks()&lt;br&gt;(request:string)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;rotation=35;" parent="QsQkhcBlZQ82mHcUwRK9-32" vertex="1">
+          <mxGeometry x="535" y="175" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="QsQkhcBlZQ82mHcUwRK9-18" value="Book" style="html=1;whiteSpace=wrap;" parent="QsQkhcBlZQ82mHcUwRK9-32" vertex="1">
+          <mxGeometry x="597" y="265" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="QsQkhcBlZQ82mHcUwRK9-21" value="BookCopy" style="html=1;whiteSpace=wrap;" parent="QsQkhcBlZQ82mHcUwRK9-32" vertex="1">
+          <mxGeometry x="295" y="325" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="QsQkhcBlZQ82mHcUwRK9-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;strokeWidth=2;endArrow=none;endFill=0;endSize=10;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="QsQkhcBlZQ82mHcUwRK9-32" source="QsQkhcBlZQ82mHcUwRK9-18" target="QsQkhcBlZQ82mHcUwRK9-21" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="175" y="445" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="597" y="305" />
+              <mxPoint x="506" y="305" />
+              <mxPoint x="506" y="345" />
+              <mxPoint x="415" y="345" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6NaTUaf94sjUR2y35Tbd-13" value="" style="endArrow=open;endFill=1;endSize=12;html=1;rounded=0;strokeWidth=2;" parent="QsQkhcBlZQ82mHcUwRK9-32" edge="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="490" y="325" as="sourcePoint" />
+            <mxPoint x="446" y="325" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="490" y="324.9999999999999" />
+              <mxPoint x="466" y="325" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QsQkhcBlZQ82mHcUwRK9-29" value="" style="endArrow=open;endFill=1;endSize=12;html=1;rounded=0;strokeWidth=2;" parent="QsQkhcBlZQ82mHcUwRK9-32" edge="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="530" y="205" as="sourcePoint" />
+            <mxPoint x="570" y="235" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6NaTUaf94sjUR2y35Tbd-18" value="" style="endArrow=open;endFill=1;endSize=12;html=1;rounded=0;strokeWidth=2;" parent="QsQkhcBlZQ82mHcUwRK9-32" edge="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="200" y="155" as="sourcePoint" />
+            <mxPoint x="160" y="155" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QsQkhcBlZQ82mHcUwRK9-9" value=":Reader" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;horizontal=1;html=1;labelBorderColor=none;textShadow=0;comic=0;enumerate=0;treeMoving=0;" parent="QsQkhcBlZQ82mHcUwRK9-32" vertex="1">
+          <mxGeometry x="25" y="115" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="QsQkhcBlZQ82mHcUwRK9-24" value="&lt;div&gt;[available=true]&lt;/div&gt;1.5 CreateOrder(&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;reder:Reader, bookCopy: BookCopy)&lt;/span&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;rotation=0;" parent="QsQkhcBlZQ82mHcUwRK9-32" vertex="1">
+          <mxGeometry x="84" y="165" width="220" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="SLKcXJed-mwTdSsudwls-2" value="" style="endArrow=open;endFill=1;endSize=12;html=1;rounded=0;strokeWidth=2;" edge="1" parent="QsQkhcBlZQ82mHcUwRK9-32">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="460" y="215" as="sourcePoint" />
+            <mxPoint x="430" y="265" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="460" y="215" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6NaTUaf94sjUR2y35Tbd-9" value="" style="endArrow=open;endFill=1;endSize=12;html=1;rounded=0;strokeWidth=2;" parent="QsQkhcBlZQ82mHcUwRK9-32" edge="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="357.5" y="135.34000000000003" as="sourcePoint" />
+            <mxPoint x="402.5" y="135" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6NaTUaf94sjUR2y35Tbd-11" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeWidth=2;endSize=10;endArrow=none;endFill=0;" parent="1" source="QsQkhcBlZQ82mHcUwRK9-12" target="QsQkhcBlZQ82mHcUwRK9-21" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="625" y="850" as="sourcePoint" />
+            <mxPoint x="777" y="940" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

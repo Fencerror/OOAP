@@ -1,0 +1,95 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36 Edg/130.0.0.0" version="24.8.6">
+  <diagram name="Страница — 1" id="pS3-0in7lJvGyoiqe4uQ">
+    <mxGraphModel dx="1143" dy="485" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="MXmLlazvCsYPoLQf0tN6-3" value="" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};participant=umlActor;" parent="1" vertex="1">
+          <mxGeometry x="320" y="380" width="20" height="700" as="geometry" />
+        </mxCell>
+        <mxCell id="MXmLlazvCsYPoLQf0tN6-5" value="" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" parent="MXmLlazvCsYPoLQf0tN6-3" vertex="1">
+          <mxGeometry x="5" y="80" width="10" height="470" as="geometry" />
+        </mxCell>
+        <mxCell id="MXmLlazvCsYPoLQf0tN6-4" value="Reader" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="300" y="410" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="MXmLlazvCsYPoLQf0tN6-6" value="libraryStaff" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" parent="1" vertex="1">
+          <mxGeometry x="440" y="390" width="100" height="680" as="geometry" />
+        </mxCell>
+        <mxCell id="MXmLlazvCsYPoLQf0tN6-12" value="" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" parent="MXmLlazvCsYPoLQf0tN6-6" vertex="1">
+          <mxGeometry x="45" y="100" width="10" height="380" as="geometry" />
+        </mxCell>
+        <mxCell id="MXmLlazvCsYPoLQf0tN6-13" value="" style="html=1;align=left;spacingLeft=2;endArrow=block;rounded=0;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;exitX=1;exitY=0;exitDx=0;exitDy=5;exitPerimeter=0;" parent="MXmLlazvCsYPoLQf0tN6-6" source="MXmLlazvCsYPoLQf0tN6-12" target="MXmLlazvCsYPoLQf0tN6-12" edge="1">
+          <mxGeometry x="0.3333" y="11" relative="1" as="geometry">
+            <mxPoint x="55" y="110" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="80" y="125" />
+              <mxPoint x="80" y="160" />
+            </Array>
+            <mxPoint x="5" y="-1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="MXmLlazvCsYPoLQf0tN6-7" value="redingRoom" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" parent="1" vertex="1">
+          <mxGeometry x="610" y="390" width="100" height="670" as="geometry" />
+        </mxCell>
+        <mxCell id="MXmLlazvCsYPoLQf0tN6-8" value="bookCopies" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" parent="1" vertex="1">
+          <mxGeometry x="780" y="390" width="100" height="680" as="geometry" />
+        </mxCell>
+        <mxCell id="MXmLlazvCsYPoLQf0tN6-10" value="BookRezervation(BookID)" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;" parent="1" edge="1">
+          <mxGeometry x="-0.0007" width="80" relative="1" as="geometry">
+            <mxPoint x="332.9988888888889" y="520" as="sourcePoint" />
+            <mxPoint x="480" y="520" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="MXmLlazvCsYPoLQf0tN6-14" value="&lt;font style=&quot;font-size: 9px;&quot;&gt;BookCopy = chooseBookCopy(&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 9px;&quot;&gt;BookID)&lt;/font&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="490" y="493" width="150" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="MXmLlazvCsYPoLQf0tN6-15" value="room= getRoom()" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;" parent="1" target="MXmLlazvCsYPoLQf0tN6-7" edge="1">
+          <mxGeometry x="-0.0007" width="80" relative="1" as="geometry">
+            <mxPoint x="492.9988888888889" y="589.55" as="sourcePoint" />
+            <mxPoint x="640" y="589.55" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="MXmLlazvCsYPoLQf0tN6-17" value="ref" style="shape=umlFrame;whiteSpace=wrap;html=1;pointerEvents=0;width=100;height=20;" parent="1" vertex="1">
+          <mxGeometry x="470" y="620" width="290" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="MXmLlazvCsYPoLQf0tN6-18" value="sdCheckAvailability" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="610" y="670" width="130" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="MXmLlazvCsYPoLQf0tN6-20" value="" style="endArrow=open;endSize=12;dashed=1;html=1;rounded=0;" parent="1" edge="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="489" y="870" as="sourcePoint" />
+            <mxPoint x="339" y="870" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="MXmLlazvCsYPoLQf0tN6-21" value="" style="endArrow=open;endSize=12;dashed=1;html=1;rounded=0;" parent="1" source="MXmLlazvCsYPoLQf0tN6-12" edge="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="445.5" y="789.9999999999999" as="sourcePoint" />
+            <mxPoint x="920" y="789.9999999999999" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="MXmLlazvCsYPoLQf0tN6-23" value="r:Rezervation" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" parent="1" vertex="1">
+          <mxGeometry x="920" y="770" width="100" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="MXmLlazvCsYPoLQf0tN6-24" value="new (Rezervation(r, bookCopy))" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="555" y="760" width="190" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="MXmLlazvCsYPoLQf0tN6-27" value="updateRezervationRequest(r, bookCopy)" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;" parent="1" edge="1">
+          <mxGeometry x="-0.0007" width="80" relative="1" as="geometry">
+            <mxPoint x="492.75" y="840" as="sourcePoint" />
+            <mxPoint x="827.25" y="840" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="yctHTVXnSSoFoLmLSGww-1" value="opt[isAvaible=true]" style="shape=umlFrame;whiteSpace=wrap;html=1;pointerEvents=0;width=130;height=30;" parent="1" vertex="1">
+          <mxGeometry x="470" y="740" width="395" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="BkT2M7gipWfJbJvaOfT4-2" value="&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Helvetica; font-size: 11px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: nowrap; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;&quot;&gt;isAvaible =&amp;nbsp;&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Helvetica; font-size: 11px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: nowrap; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;&quot;&gt;checkAvaibality()&lt;/span&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="495" y="640" width="140" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
