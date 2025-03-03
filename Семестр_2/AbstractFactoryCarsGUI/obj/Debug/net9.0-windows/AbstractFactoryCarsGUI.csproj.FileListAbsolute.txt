@@ -1,0 +1,15 @@
+C:\Users\tyghr\.vscode\OOAP\Семестр_2\AbstractFactoryCarsGUI\bin\Debug\net9.0-windows\AbstractFactoryCarsGUI.exe
+C:\Users\tyghr\.vscode\OOAP\Семестр_2\AbstractFactoryCarsGUI\bin\Debug\net9.0-windows\AbstractFactoryCarsGUI.deps.json
+C:\Users\tyghr\.vscode\OOAP\Семестр_2\AbstractFactoryCarsGUI\bin\Debug\net9.0-windows\AbstractFactoryCarsGUI.runtimeconfig.json
+C:\Users\tyghr\.vscode\OOAP\Семестр_2\AbstractFactoryCarsGUI\bin\Debug\net9.0-windows\AbstractFactoryCarsGUI.dll
+C:\Users\tyghr\.vscode\OOAP\Семестр_2\AbstractFactoryCarsGUI\bin\Debug\net9.0-windows\AbstractFactoryCarsGUI.pdb
+C:\Users\tyghr\.vscode\OOAP\Семестр_2\AbstractFactoryCarsGUI\obj\Debug\net9.0-windows\AbstractFactoryCarsGUI.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\tyghr\.vscode\OOAP\Семестр_2\AbstractFactoryCarsGUI\obj\Debug\net9.0-windows\AbstractFactoryCarsGUI.AssemblyInfoInputs.cache
+C:\Users\tyghr\.vscode\OOAP\Семестр_2\AbstractFactoryCarsGUI\obj\Debug\net9.0-windows\AbstractFactoryCarsGUI.AssemblyInfo.cs
+C:\Users\tyghr\.vscode\OOAP\Семестр_2\AbstractFactoryCarsGUI\obj\Debug\net9.0-windows\AbstractFactoryCarsGUI.csproj.CoreCompileInputs.cache
+C:\Users\tyghr\.vscode\OOAP\Семестр_2\AbstractFactoryCarsGUI\obj\Debug\net9.0-windows\AbstractFactoryCarsGUI.sourcelink.json
+C:\Users\tyghr\.vscode\OOAP\Семестр_2\AbstractFactoryCarsGUI\obj\Debug\net9.0-windows\AbstractFactoryCarsGUI.dll
+C:\Users\tyghr\.vscode\OOAP\Семестр_2\AbstractFactoryCarsGUI\obj\Debug\net9.0-windows\refint\AbstractFactoryCarsGUI.dll
+C:\Users\tyghr\.vscode\OOAP\Семестр_2\AbstractFactoryCarsGUI\obj\Debug\net9.0-windows\AbstractFactoryCarsGUI.pdb
+C:\Users\tyghr\.vscode\OOAP\Семестр_2\AbstractFactoryCarsGUI\obj\Debug\net9.0-windows\AbstractFactoryCarsGUI.genruntimeconfig.cache
+C:\Users\tyghr\.vscode\OOAP\Семестр_2\AbstractFactoryCarsGUI\obj\Debug\net9.0-windows\ref\AbstractFactoryCarsGUI.dll
