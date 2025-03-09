@@ -1,6 +1,7 @@
 using System;
 using System.Drawing;
 using System.Windows.Forms;
+using System.Drawing.Imaging;
 using System.IO;
 
 namespace AbstractFactoryCarsGUI
@@ -8,98 +9,35 @@ namespace AbstractFactoryCarsGUI
     public class MainForm : Form
     {
         private ComboBox manufacturerComboBox;
-        private ComboBox colorComboBox;
-        private ComboBox modelComboBox;
-        private ComboBox transmissionComboBox;
         private Button createCarButton;
+        private Image backgroundImage;
 
         public MainForm()
         {
             Text = "Car Assembler";
-            Width = 500;
-            Height = 500;
+            Width = 900;
+            Height = 750;
             StartPosition = FormStartPosition.CenterScreen;
             FormBorderStyle = FormBorderStyle.FixedDialog;
             MaximizeBox = false;
 
-            Label manufacturerLabel = new Label
+            try
             {
-                Text = "Выберите производителя:",
-                Location = new Point(10, 20),
-                AutoSize = true,
-                Font = new Font("Arial", 12, FontStyle.Bold)
-            };
-            Controls.Add(manufacturerLabel);
+                backgroundImage = Image.FromFile("photos/logo.png");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ошибка загрузки фона: {ex.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
-            manufacturerComboBox = new ComboBox
-            {
-                Location = new Point(10, 50),
-                Width = 460,
-                Font = new Font("Arial", 12)
-            };
-            manufacturerComboBox.Items.AddRange(new string[] { "BMW", "Toyota", "Tesla" });
-            Controls.Add(manufacturerComboBox);
-
-            Label colorLabel = new Label
-            {
-                Text = "Выберите цвет:",
-                Location = new Point(10, 90),
-                AutoSize = true,
-                Font = new Font("Arial", 12, FontStyle.Bold)
-            };
-            Controls.Add(colorLabel);
-
-            colorComboBox = new ComboBox
-            {
-                Location = new Point(10, 120),
-                Width = 460,
-                Font = new Font("Arial", 12)
-            };
-            colorComboBox.Items.AddRange(new string[] { "Красный", "Синий", "Чёрный", "Белый" });
-            Controls.Add(colorComboBox);
-
-            Label modelLabel = new Label
-            {
-                Text = "Выберите модель:",
-                Location = new Point(10, 160),
-                AutoSize = true,
-                Font = new Font("Arial", 12, FontStyle.Bold)
-            };
-            Controls.Add(modelLabel);
-
-            modelComboBox = new ComboBox
-            {
-                Location = new Point(10, 190),
-                Width = 460,
-                Font = new Font("Arial", 12)
-            };
-            modelComboBox.Items.AddRange(new string[] { "Модель A", "Модель B", "Модель C" });
-            Controls.Add(modelComboBox);
-
-            Label transmissionLabel = new Label
-            {
-                Text = "Выберите трансмиссию:",
-                Location = new Point(10, 230),
-                AutoSize = true,
-                Font = new Font("Arial", 12, FontStyle.Bold)
-            };
-            Controls.Add(transmissionLabel);
-
-            transmissionComboBox = new ComboBox
-            {
-                Location = new Point(10, 260),
-                Width = 460,
-                Font = new Font("Arial", 12)
-            };
-            transmissionComboBox.Items.AddRange(new string[] { "Автоматическая", "Механическая", "Одноступенчатая" });
-            Controls.Add(transmissionComboBox);
+            manufacturerComboBox = CreateLabeledComboBox("Выберите производителя:", new string[] { "BMW", "Toyota", "Tesla" }, 100);
 
             createCarButton = new Button
             {
                 Text = "Создать автомобиль",
-                Location = new Point(10, 300),
-                Width = 460,
-                Height = 40,
+                Location = new Point(100, 200),
+                Width = 300,
+                Height = 50,
                 Font = new Font("Arial", 12, FontStyle.Bold),
                 BackColor = Color.LightBlue
             };
@@ -107,16 +45,55 @@ namespace AbstractFactoryCarsGUI
             Controls.Add(createCarButton);
         }
 
+        protected override void OnPaint(PaintEventArgs e)
+        {
+            base.OnPaint(e);
+            if (backgroundImage != null)
+            {
+                ColorMatrix matrix = new ColorMatrix
+                {
+                    Matrix33 = 1f // Устанавливаем прозрачность (0 - полностью прозрачный, 1 - непрозрачный)
+                };
+
+                ImageAttributes attributes = new ImageAttributes();
+                attributes.SetColorMatrix(matrix, ColorMatrixFlag.Default, ColorAdjustType.Bitmap);
+
+                e.Graphics.DrawImage(backgroundImage, new Rectangle(0, 0, Width, Height), 0, 0, backgroundImage.Width, backgroundImage.Height, GraphicsUnit.Pixel, attributes);
+            }
+        }
+
+        private ComboBox CreateLabeledComboBox(string labelText, string[] items, int y)
+        {
+            var label = new Label
+            {
+                Text = labelText,
+                Location = new Point(100, y),
+                AutoSize = true,
+                Font = new Font("Arial", 12, FontStyle.Bold),
+                BackColor = Color.Transparent,
+                ForeColor = Color.White
+            };
+            Controls.Add(label);
+
+            var comboBox = new ComboBox
+            {
+                Location = new Point(100, y + 30),
+                Width = 300,
+                Font = new Font("Arial", 12)
+            };
+            comboBox.Items.AddRange(items);
+            Controls.Add(comboBox);
+
+            return comboBox;
+        }
+
         private void CreateCarButton_Click(object sender, EventArgs e)
         {
             string selectedManufacturer = manufacturerComboBox.SelectedItem?.ToString() ?? string.Empty;
-            string selectedColor = colorComboBox.SelectedItem?.ToString() ?? string.Empty;
-            string selectedModel = modelComboBox.SelectedItem?.ToString() ?? string.Empty;
-            string selectedTransmission = transmissionComboBox.SelectedItem?.ToString() ?? string.Empty;
 
-            if (string.IsNullOrEmpty(selectedManufacturer) || string.IsNullOrEmpty(selectedColor) || string.IsNullOrEmpty(selectedModel) || string.IsNullOrEmpty(selectedTransmission))
+            if (string.IsNullOrEmpty(selectedManufacturer))
             {
-                MessageBox.Show("Пожалуйста, выберите все параметры.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Пожалуйста, выберите производителя.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -128,8 +105,22 @@ namespace AbstractFactoryCarsGUI
                 _ => throw new ArgumentException("Неверный выбор")
             };
 
-            Car car = new Car(selectedManufacturer, factory, selectedColor, selectedModel, selectedTransmission);
+            Car car = new Car(selectedManufacturer, factory);
             car.SaveToHtml();
+
+            string reportPath = Path.Combine(Environment.CurrentDirectory, $"{selectedManufacturer}_Model.html");
+            try
+            {
+                System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
+                {
+                    FileName = reportPath,
+                    UseShellExecute = true
+                });
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ошибка при открытии HTML-файла: {ex.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
