@@ -222,7 +222,6 @@ class Program
     {
         Console.WriteLine("Выберите производителя:");
         Console.WriteLine("1. BMW");
-        Console.WriteLine("2. Toyota");
         Console.WriteLine("3. Tesla");
         Console.Write("Введите номер: ");
         
@@ -231,7 +230,6 @@ class Program
         Car car = choice switch
         {
             1 => new Car("BMW", "Седан", "Бензиновый 3.0L", "Автоматическая", "Спортивные"),
-            2 => new Car("Toyota", "Внедорожник", "Дизельный 2.5L", "Механическая", "Внедорожные"),
             3 => new Car("Tesla", "Спорткар", "Электрический", "Одноступенчатая", "Аэродинамические"),
             _ => throw new ArgumentException("Неверный выбор")
         };
