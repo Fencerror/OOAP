@@ -7,7 +7,8 @@
 
 # Диаграмма классов
 
-![AbstractFactory](https://github.com/user-attachments/assets/8dc2dc05-432f-4cf3-8202-873e19a3a1d7)
+![AbstractFactory drawio](https://github.com/user-attachments/assets/c94c252b-32ee-44b6-bc71-51585e457d8a)
+
 
 
 1. **Интерфейс `ICarFactory`**
