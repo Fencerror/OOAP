@@ -10,11 +10,6 @@ namespace AbstractFactoryCarsGUI
     class BMWEngine : Engine { public override string Type => "Бензиновый 3.0L"; }
     class BMWWheels : Wheels { public override string Type => "Спортивные"; }
 
-    // Конкретные компоненты для Toyota
-    class ToyotaBody : Body { public override string Type => "Внедорожник"; }
-    class ToyotaEngine : Engine { public override string Type => "Дизельный 2.5L"; }
-    class ToyotaWheels : Wheels { public override string Type => "Внедорожные"; }
-
     // Конкретные компоненты для Tesla
     class TeslaBody : Body { public override string Type => "Спорткар"; }
     class TeslaEngine : Engine { public override string Type => "Электрический"; }

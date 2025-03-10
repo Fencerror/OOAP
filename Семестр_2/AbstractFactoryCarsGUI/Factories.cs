@@ -16,13 +16,6 @@ namespace AbstractFactoryCarsGUI
         public Wheels CreateWheels() => new BMWWheels();
     }
 
-    class ToyotaFactory : ICarFactory
-    {
-        public Body CreateBody() => new ToyotaBody();
-        public Engine CreateEngine() => new ToyotaEngine();
-        public Wheels CreateWheels() => new ToyotaWheels();
-    }
-
     class TeslaFactory : ICarFactory
     {
         public Body CreateBody() => new TeslaBody();

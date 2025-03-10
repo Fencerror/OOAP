@@ -1,6 +1,6 @@
 using System;
 using System.IO;
-using System.Windows.Forms; // Добавлено для использования MessageBox, MessageBoxButtons и MessageBoxIcon
+using System.Windows.Forms; 
 
 namespace AbstractFactoryCarsGUI
 {

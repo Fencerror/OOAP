@@ -30,7 +30,7 @@ namespace AbstractFactoryCarsGUI
                 MessageBox.Show($"Ошибка загрузки фона: {ex.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            manufacturerComboBox = CreateLabeledComboBox("Выберите производителя:", new string[] { "BMW", "Toyota", "Tesla" }, 100);
+            manufacturerComboBox = CreateLabeledComboBox("Выберите производителя:", new string[] { "BMW", "Tesla" }, 100);
 
             createCarButton = new Button
             {
@@ -100,7 +100,6 @@ namespace AbstractFactoryCarsGUI
             ICarFactory factory = selectedManufacturer switch
             {
                 "BMW" => new BMWFactory(),
-                "Toyota" => new ToyotaFactory(),
                 "Tesla" => new TeslaFactory(),
                 _ => throw new ArgumentException("Неверный выбор")
             };
