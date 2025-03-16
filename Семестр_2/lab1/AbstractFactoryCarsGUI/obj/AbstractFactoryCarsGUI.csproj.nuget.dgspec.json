@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\tyghr\\.vscode\\OOAP\\Семестр_2\\AbstractFactoryCarsGUI\\AbstractFactoryCarsGUI.csproj": {}
+    "C:\\Users\\tyghr\\.vscode\\OOAP\\Семестр_2\\lab1\\AbstractFactoryCarsGUI\\AbstractFactoryCarsGUI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\tyghr\\.vscode\\OOAP\\Семестр_2\\AbstractFactoryCarsGUI\\AbstractFactoryCarsGUI.csproj": {
+    "C:\\Users\\tyghr\\.vscode\\OOAP\\Семестр_2\\lab1\\AbstractFactoryCarsGUI\\AbstractFactoryCarsGUI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\tyghr\\.vscode\\OOAP\\Семестр_2\\AbstractFactoryCarsGUI\\AbstractFactoryCarsGUI.csproj",
+        "projectUniqueName": "C:\\Users\\tyghr\\.vscode\\OOAP\\Семестр_2\\lab1\\AbstractFactoryCarsGUI\\AbstractFactoryCarsGUI.csproj",
         "projectName": "AbstractFactoryCarsGUI",
-        "projectPath": "C:\\Users\\tyghr\\.vscode\\OOAP\\Семестр_2\\AbstractFactoryCarsGUI\\AbstractFactoryCarsGUI.csproj",
+        "projectPath": "C:\\Users\\tyghr\\.vscode\\OOAP\\Семестр_2\\lab1\\AbstractFactoryCarsGUI\\AbstractFactoryCarsGUI.csproj",
         "packagesPath": "C:\\Users\\tyghr\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\tyghr\\.vscode\\OOAP\\Семестр_2\\AbstractFactoryCarsGUI\\obj\\",
+        "outputPath": "C:\\Users\\tyghr\\.vscode\\OOAP\\Семестр_2\\lab1\\AbstractFactoryCarsGUI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\tyghr\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -4,7 +4,7 @@ using System.Windows.Forms;
 
 namespace AbstractFactoryCarsGUI
 {
-    // Класс для представления модели автомобиля
+    // Класс для представления модели автомобиля (для html отчёта)
     class Car
     {
         public string Manufacturer { get; }
