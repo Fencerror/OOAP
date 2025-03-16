@@ -7,7 +7,8 @@
 
 # Диаграмма классов
 
-![AbstractFactory](https://github.com/user-attachments/assets/8dc2dc05-432f-4cf3-8202-873e19a3a1d7)
+![AbstractFactory drawio](https://github.com/user-attachments/assets/c94c252b-32ee-44b6-bc71-51585e457d8a)
+
 
 
 1. **Интерфейс `ICarFactory`**
@@ -222,7 +223,6 @@ class Program
     {
         Console.WriteLine("Выберите производителя:");
         Console.WriteLine("1. BMW");
-        Console.WriteLine("2. Toyota");
         Console.WriteLine("3. Tesla");
         Console.Write("Введите номер: ");
         
@@ -231,7 +231,6 @@ class Program
         Car car = choice switch
         {
             1 => new Car("BMW", "Седан", "Бензиновый 3.0L", "Автоматическая", "Спортивные"),
-            2 => new Car("Toyota", "Внедорожник", "Дизельный 2.5L", "Механическая", "Внедорожные"),
             3 => new Car("Tesla", "Спорткар", "Электрический", "Одноступенчатая", "Аэродинамические"),
             _ => throw new ArgumentException("Неверный выбор")
         };
@@ -246,6 +245,8 @@ class Program
 
 **Преимущества:**
  - Удобен при создании групп взаимосвязанных объектов
+
+
 **Недостатки:**
  - Неудобен при добавлении нового объекта в семейство (надо расширять все реализованные фабрики)
  - Трудно реализовать, если семейства имеют разное количество объектов
