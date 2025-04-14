@@ -3,11 +3,18 @@ using System.Collections.Generic;
 
 namespace FlyweightTerrainGeneratorConsole
 {
-    // Внутреннее состояние
-    class TerrainType
+    // Интерфейс Flyweight
+    interface Flyweight
     {
-        public string Texture { get; }
-        public string Color { get; }
+        string GetColor(); // Метод для получения внутреннего состояния
+        void Draw(int x, int y); // Метод для работы с внешним состоянием
+    }
+
+
+    class TerrainType : Flyweight
+    {
+        private string Texture { get; }
+        private string Color { get; }
 
         public TerrainType(string texture, string color)
         {
@@ -15,13 +22,14 @@ namespace FlyweightTerrainGeneratorConsole
             Color = color;
         }
 
-        public void Draw(int x, int y)
+        public string GetColor()
         {
-            Console.WriteLine($"Drawing {Texture} ({Color}) at ({x}, {y})");
+            return Color;
         }
+
     }
 
-    // Фабрика для управления TerrainType
+    // Фабрика для управления клетками
     class TerrainFactory
     {
         private Dictionary<string, TerrainType> _terrainTypes = new Dictionary<string, TerrainType>();
@@ -37,7 +45,7 @@ namespace FlyweightTerrainGeneratorConsole
         }
     }
     
-    // Внешнее состояние
+    // Внешнее состояние - у каждого элемента индивидуальное
     class Terrain
     {
         private int _x, _y;
@@ -48,11 +56,6 @@ namespace FlyweightTerrainGeneratorConsole
             _x = x;
             _y = y;
             _terrainType = terrainType;
-        }
-
-        public void Draw()
-        {
-            _terrainType.Draw(_x, _y);
         }
     }
 

@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "lN/XB5lVD9Q=",
+  "dgSpecHash": "YRj23vCh+EI=",
   "success": true,
   "projectFilePath": "C:\\Users\\tyghr\\.vscode\\OOAP\\Семестр_2\\lab2\\FlyweightTerrainGeneratorWPF\\FlyweightTerrainGeneratorWPF.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\tyghr\\.nuget\\packages\\microsoft.netcore.app.ref\\8.0.11\\microsoft.netcore.app.ref.8.0.11.nupkg.sha512",
+    "C:\\Users\\tyghr\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\8.0.11\\microsoft.windowsdesktop.app.ref.8.0.11.nupkg.sha512",
+    "C:\\Users\\tyghr\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\8.0.11\\microsoft.aspnetcore.app.ref.8.0.11.nupkg.sha512",
+    "C:\\Users\\tyghr\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\8.0.11\\microsoft.netcore.app.host.win-x64.8.0.11.nupkg.sha512"
+  ],
   "logs": []
 }

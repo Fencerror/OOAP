@@ -1,9 +1,19 @@
 ﻿<Window x:Class="FlyweightTerrainGeneratorWPF.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Terrain Generator" Height="490" Width="410">
+        Title="Terrain Generator" Height="750" Width="650">
     <Grid>
-        <Canvas x:Name="TerrainCanvas" Background="LightGray" Margin="0,50,0,0" />
-        <Button x:Name="GenerateButton" Content="Generate New Map" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0" Click="GenerateButton_Click" />
+        <Canvas x:Name="TerrainCanvas" Background="LightGray" Margin="0,80,0,0"
+                Width="600" Height="600"/>
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Margin="10,10,0,0">
+            <ComboBox x:Name="BiomeComboBox" Width="150" Margin="0,0,10,0" SelectedIndex="0">
+                <ComboBoxItem Content="Random"/>
+                <ComboBoxItem Content="Forest"/>
+                <ComboBoxItem Content="Desert"/>
+                <ComboBoxItem Content="Islands"/>
+                <ComboBoxItem Content="Mountains"/>
+            </ComboBox>
+            <Button x:Name="GenerateButton" Content="Generate Map" Width="100" Click="GenerateButton_Click"/>
+        </StackPanel>
     </Grid>
 </Window>

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AbstractFactoryCarsGUI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ed13d2d365a6f940539245f1636d6dbb2f4e01ed")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+823bbffc23b7951360154138ec4d8f3c524a9716")]
 [assembly: System.Reflection.AssemblyProductAttribute("AbstractFactoryCarsGUI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AbstractFactoryCarsGUI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
