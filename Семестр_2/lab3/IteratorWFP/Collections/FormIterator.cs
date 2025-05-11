@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using lab3.Models;
 using lab3.Iterators;
@@ -26,6 +27,18 @@ namespace lab3.Collections
 
         public object Current()
         {
+            return _fields[_position - 1];
+        }
+
+        public bool HasPrevious()
+        {
+            return _position > 1;
+        }
+
+        public object Previous()
+        {
+            if (!HasPrevious()) throw new InvalidOperationException("No previous element.");
+            _position--;
             return _fields[_position - 1];
         }
     }

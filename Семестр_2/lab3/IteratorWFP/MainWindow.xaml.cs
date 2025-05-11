@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System.Linq; // добавлено для проверки условий сценария
+using System.Windows;
 using lab3.Collections;
 using lab3.Models;
 using lab3.Iterators;
@@ -68,7 +69,7 @@ namespace lab3
             FieldsPanel.Children.Clear();
             foreach (var field in block.Fields)
             {
-                // Create and add label for the field with or without description
+                
                 var labelContent = string.IsNullOrWhiteSpace(field.Description) 
                     ? field.Label 
                     : $"{field.Label} ({field.Description})";
@@ -83,7 +84,7 @@ namespace lab3
 
                 if (field.Type == FieldType.Text)
                 {
-                    // Create and add textbox for text fields
+                    
                     var textBox = new System.Windows.Controls.TextBox
                     {
                         Text = field.Value,
@@ -96,7 +97,7 @@ namespace lab3
                 }
                 else if (field.Type == FieldType.Dropdown)
                 {
-                    // Create and add combobox for dropdown fields
+            
                     var comboBox = new System.Windows.Controls.ComboBox
                     {
                         ItemsSource = field.Options,
@@ -123,7 +124,7 @@ namespace lab3
                 if (child is System.Windows.Controls.TextBox textBox && textBox.Tag is FormField field)
                 {
                     field.Value = textBox.Text;
-                    // Example validation: Ensure the field is not empty
+                    
                     if (string.IsNullOrWhiteSpace(field.Value))
                     {
                         isValid = false;
@@ -134,7 +135,7 @@ namespace lab3
                 else if (child is System.Windows.Controls.ComboBox comboBox && comboBox.Tag is FormField dropdownField)
                 {
                     dropdownField.Value = comboBox.SelectedValue?.ToString() ?? string.Empty;
-                    // Example validation: Ensure a value is selected
+                    
                     if (string.IsNullOrWhiteSpace(dropdownField.Value))
                     {
                         isValid = false;
@@ -146,7 +147,74 @@ namespace lab3
 
             if (isValid)
             {
+                // Новый сценарий: если в блоке "Опрос о спорте" поле "Как часто вы занимаетесь спортом?" имеет значение "Никогда"
+                if (currentBlock.Title == "Опрос о спорте")
+                {
+                    foreach (var field in currentBlock.Fields)
+                    {
+                        if (field.Label == "Как часто вы занимаетесь спортом?" && field.Value == "Никогда")
+                        {
+                            var recommendationBlock = new FormBlock("Рекомендации");
+                            recommendationBlock.AddField(new FormField("Причины", "Расскажите, почему вы не занимаетесь спортом?", FieldType.Text));
+                            _formCollection.AddBlock(recommendationBlock);
+                            break;
+                        }
+                    }
+                }
+
                 LoadCurrentBlock();
+            }
+        }
+
+        private void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (_iterator == null || !_iterator.HasPrevious())
+            {
+                MessageBox.Show("Нет предыдущего блока.", "Навигация");
+                return;
+            }
+            var block = (FormBlock)_iterator.Previous();
+            FieldLabel.Content = block.Title;
+            FieldsPanel.Children.Clear();
+            foreach (var field in block.Fields)
+            {
+                var labelContent = string.IsNullOrWhiteSpace(field.Description)
+                    ? field.Label
+                    : $"{field.Label} ({field.Description})";
+
+                var label = new System.Windows.Controls.Label
+                {
+                    Content = labelContent,
+                    FontSize = 18,
+                    Margin = new Thickness(0, 10, 0, 5)
+                };
+                FieldsPanel.Children.Add(label);
+
+                if (field.Type == FieldType.Text)
+                {
+                    var textBox = new System.Windows.Controls.TextBox
+                    {
+                        Text = field.Value,
+                        Tag = field,
+                        FontSize = 16,
+                        Height = 40,
+                        Margin = new Thickness(0, 0, 0, 15)
+                    };
+                    FieldsPanel.Children.Add(textBox);
+                }
+                else if (field.Type == FieldType.Dropdown)
+                {
+                    var comboBox = new System.Windows.Controls.ComboBox
+                    {
+                        ItemsSource = field.Options,
+                        SelectedValue = field.Value,
+                        Tag = field,
+                        FontSize = 16,
+                        Height = 40,
+                        Margin = new Thickness(0, 0, 0, 15)
+                    };
+                    FieldsPanel.Children.Add(comboBox);
+                }
             }
         }
 

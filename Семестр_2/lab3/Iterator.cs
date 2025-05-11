@@ -3,75 +3,125 @@ using System.Collections.Generic;
 
 namespace IteratorPatternDemo
 {
-    // Iterator: определяет интерфейс для обхода составных объектов
+    // Iterator: интерфейс для обхода элементов
     public interface IIterator
     {
         bool HasNext();
         object Next();
+        object Current();
     }
 
-    // Aggregate: определяет интерфейс для создания объекта-итератора
-    public interface IAggregate
+    // FormCollection: интерфейс для создания итератора
+    public interface IFormCollection
     {
         IIterator CreateIterator();
     }
 
-    // ConcreteIterator: конкретная реализация итератора
-    public class ConcreteIterator : IIterator
+    // ConcreteIterator: реализация итератора
+    public class FormIterator : IIterator
     {
-        private readonly List<string> _collection;
-        private int _current = 0;
+        private readonly List<FormBlock> _blocks;
+        private int _position = 0;
 
-        public ConcreteIterator(List<string> collection)
+        public FormIterator(List<FormBlock> blocks)
         {
-            _collection = collection;
+            _blocks = blocks;
         }
 
         public bool HasNext()
         {
-            return _current < _collection.Count;
+            return _position < _blocks.Count;
         }
 
         public object Next()
         {
-            return _collection[_current++];
+            return _blocks[_position++];
+        }
+
+        public object Current()
+        {
+            return _blocks[_position - 1];
         }
     }
 
-    // ConcreteAggregate: конкретная реализация Aggregate
-    public class ConcreteAggregate : IAggregate
+    // ConcreteFormCollection: реализация FormCollection
+    public class FormCollection : IFormCollection
     {
-        private readonly List<string> _items = new List<string>();
+        private readonly List<FormBlock> _blocks = new List<FormBlock>();
 
-        public void AddItem(string item)
+        public void AddBlock(FormBlock block)
         {
-            _items.Add(item);
+            _blocks.Add(block);
         }
 
         public IIterator CreateIterator()
         {
-            return new ConcreteIterator(_items);
+            return new FormIterator(_blocks);
         }
     }
 
-    // Client: использует объект Aggregate и итератор для его обхода
+    // FormBlock: блок формы
+    public class FormBlock
+    {
+        public string Title { get; }
+        public List<FormField> Fields { get; }
+
+        public FormBlock(string title)
+        {
+            Title = title;
+            Fields = new List<FormField>();
+        }
+
+        public void AddField(FormField field)
+        {
+            Fields.Add(field);
+        }
+    }
+
+    // FormField: поле формы
+    public class FormField
+    {
+        public string Label { get; }
+        public string Value { get; set; }
+
+        public FormField(string label)
+        {
+            Label = label;
+            Value = string.Empty;
+        }
+    }
+
+    // Client: демонстрация работы
     class Program
     {
         static void Main(string[] args)
         {
-            // Создаем коллекцию
-            var collection = new ConcreteAggregate();
-            collection.AddItem("Item 1");
-            collection.AddItem("Item 2");
-            collection.AddItem("Item 3");
+            // Создаем коллекцию блоков формы
+            var formCollection = new FormCollection();
 
-            // Получаем итератор
-            var iterator = collection.CreateIterator();
+            // Блок 1: Персональная информация
+            var personalInfoBlock = new FormBlock("Персональная информация");
+            personalInfoBlock.AddField(new FormField("Имя"));
+            personalInfoBlock.AddField(new FormField("Фамилия"));
+            personalInfoBlock.AddField(new FormField("Возраст"));
+            formCollection.AddBlock(personalInfoBlock);
 
-            // Обходим коллекцию
+            // Блок 2: Профессиональные данные
+            var professionalInfoBlock = new FormBlock("Профессиональные данные");
+            professionalInfoBlock.AddField(new FormField("Университет"));
+            professionalInfoBlock.AddField(new FormField("Специальность"));
+            formCollection.AddBlock(professionalInfoBlock);
+
+            // Итерация по блокам формы
+            var iterator = formCollection.CreateIterator();
             while (iterator.HasNext())
             {
-                Console.WriteLine(iterator.Next());
+                var block = (FormBlock)iterator.Next();
+                Console.WriteLine($"Блок: {block.Title}");
+                foreach (var field in block.Fields)
+                {
+                    Console.WriteLine($"  Поле: {field.Label}, Значение: {field.Value}");
+                }
             }
         }
     }

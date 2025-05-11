@@ -13,6 +13,20 @@ namespace lab3.Collections
             _blocks.Add(block);
         }
 
+        public void InsertBlockAfter(FormBlock referenceBlock, FormBlock blockToInsert)
+        {
+            int index = _blocks.IndexOf(referenceBlock);
+            if (index >= 0)
+            {
+                _blocks.Insert(index + 1, blockToInsert);
+            }
+        }
+
+        public bool RemoveBlock(FormBlock block)
+        {
+            return _blocks.Remove(block);
+        }
+
         public IFormIterator GetIterator()
         {
             return new FormIterator(_blocks);
@@ -45,6 +59,18 @@ namespace lab3.Collections
 
             public object Current()
             {
+                return _blocks[_position - 1];
+            }
+
+            public bool HasPrevious()
+            {
+                return _position > 1;
+            }
+
+            public object Previous()
+            {
+                if (!HasPrevious()) throw new System.InvalidOperationException("No previous element.");
+                _position--;
                 return _blocks[_position - 1];
             }
         }

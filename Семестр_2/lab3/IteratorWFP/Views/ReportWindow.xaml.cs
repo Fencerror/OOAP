@@ -12,7 +12,7 @@ namespace lab3.Views
             InitializeComponent();
 
             // Генерируем отчет
-            foreach (var block in formCollection.GetBlocks()) // Используем GetBlocks вместо GetFields
+            foreach (var block in formCollection.GetBlocks()) 
             {
                 var blockTitle = new TextBlock
                 {

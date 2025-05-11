@@ -4,6 +4,9 @@ namespace lab3.Iterators
     {
         bool HasNext();
         object Next();
-        object Current(); 
+        object Current();
+        // Добавлены методы для перехода назад:
+        bool HasPrevious();
+        object Previous();
     }
 }
