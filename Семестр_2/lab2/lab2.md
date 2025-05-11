@@ -5,7 +5,8 @@
 Система предназначена для генерации и визуализации ландшафта, состоящего из различных типов terrain (трава, вода, песок, горы). Основная задача системы — демонстрация применения паттерна проектирования Приспособленец (Flyweight) для оптимизации использования памяти и повышения производительности.
 
 # Диаграмма классов
-![Flyweight](https://github.com/user-attachments/assets/8d0ee009-f25a-4ea0-932e-0910083c8fb8)
+![Flyweight drawio](https://github.com/user-attachments/assets/0e454b97-a8f3-4707-b36f-07164e41c637)
+
 
 # Описание диаграммы
 
@@ -52,11 +53,11 @@ using System.Collections.Generic;
 
 namespace FlyweightTerrainGeneratorConsole
 {
-    // Внутреннее состояние
     class TerrainType
     {
         public string Texture { get; }
         public string Color { get; }
+        public TerrainType _terrainType; // Добавлено по диаграмме (хотя это странно)
 
         public TerrainType(string texture, string color)
         {
@@ -64,16 +65,16 @@ namespace FlyweightTerrainGeneratorConsole
             Color = color;
         }
 
-        public void Draw(int x, int y)
+        public void DisplayAt(int x, int y) // Переименовано по диаграмме
         {
             Console.WriteLine($"Drawing {Texture} ({Color}) at ({x}, {y})");
         }
     }
 
-    // Фабрика для управления TerrainType
     class TerrainFactory
     {
-        private Dictionary<string, TerrainType> _terrainTypes = new Dictionary<string, TerrainType>();
+        private Dictionary<string, TerrainType> _terrainTypes 
+            = new Dictionary<string, TerrainType>();
 
         public TerrainType GetTerrainType(string texture, string color)
         {
@@ -86,10 +87,10 @@ namespace FlyweightTerrainGeneratorConsole
         }
     }
 
-    // Внешнее состояние
     class Terrain
     {
-        private int _x, _y;
+        private int _x; // integer в диаграмме
+        private int _y; // integer в диаграмме
         private TerrainType _terrainType;
 
         public Terrain(int x, int y, TerrainType terrainType)
@@ -99,20 +100,27 @@ namespace FlyweightTerrainGeneratorConsole
             _terrainType = terrainType;
         }
 
-        public void Draw()
+        public void Render() // Переименовано по диаграмме
         {
-            _terrainType.Draw(_x, _y);
+            _terrainType.DisplayAt(_x, _y); // Используем новый метод
         }
     }
 
-    // Клиентский код
+    class Draw // Новый класс по диаграмме
+    {
+        public void Draw() // Пустой метод как в диаграмме
+        {
+            // Реализация не указана в диаграмме
+        }
+    }
+
     class Program
     {
         static void Main(string[] args)
         {
             TerrainFactory factory = new TerrainFactory();
+            Draw drawer = new Draw(); // Создаем экземпляр Draw
 
-            // Создаем типы terrain
             TerrainType grass = factory.GetTerrainType("Grass", "Green");
             TerrainType water = factory.GetTerrainType("Water", "Blue");
             TerrainType sand = factory.GetTerrainType("Sand", "Yellow");
@@ -121,35 +129,35 @@ namespace FlyweightTerrainGeneratorConsole
             Terrain[,] map = new Terrain[10, 10];
             Random random = new Random();
 
-            // Заполняем карту случайными terrain
             for (int i = 0; i < 10; i++)
             {
                 for (int j = 0; j < 10; j++)
                 {
-                    int terrainIndex = random.Next(4); // Случайный выбор terrain
+                    int terrainIndex = random.Next(4);
                     TerrainType terrainType = terrainIndex switch
                     {
                         0 => grass,
                         1 => water,
                         2 => sand,
                         3 => mountain,
-                        _ => grass // По умолчанию трава
+                        _ => grass
                     };
                     map[i, j] = new Terrain(i, j, terrainType);
                 }
             }
 
-            // Отображаем карту
             for (int i = 0; i < 10; i++)
             {
                 for (int j = 0; j < 10; j++)
                 {
-                    map[i, j].Draw();
+                    map[i, j].Render(); // Используем переименованный метод
+                    drawer.Draw(); // Вызываем Draw (хотя его назначение неясно)
                 }
             }
         }
     }
 }
+
 ```
 
 # Код без паттерна
