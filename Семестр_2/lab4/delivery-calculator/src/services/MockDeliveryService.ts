@@ -13,7 +13,7 @@ export class MockDeliveryService implements DeliveryService {
         } else {
           resolve({ price: 999, estimatedDays: 3 });
         }
-      }, 300);
+      }, 0);
     });
   }
 }

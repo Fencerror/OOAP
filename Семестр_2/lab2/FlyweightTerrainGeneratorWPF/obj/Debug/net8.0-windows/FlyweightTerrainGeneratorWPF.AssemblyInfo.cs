@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FlyweightTerrainGeneratorWPF")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2978b129ed48ac969f4495de319781e07628da3f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2e7bf676c91047ffd153c656d78a6aaa1331a075")]
 [assembly: System.Reflection.AssemblyProductAttribute("FlyweightTerrainGeneratorWPF")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FlyweightTerrainGeneratorWPF")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
